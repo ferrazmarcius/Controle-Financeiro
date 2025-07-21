@@ -27,7 +27,23 @@ COLUNAS_CARTOES = ['Nome_Cartao', 'Limite', 'Dia_Vencimento']
 COLUNAS_METAS = ['Objetivo', 'Valor_Alvo', 'Data_Alvo']
 
 # --- Constantes de Configuração ---
-CATEGORIAS_DESPESA = ("Casa", "Profissional", "Pessoal", "Mercado", "Farmácia e Saúde", "Lazer", "Shopping", "Festas", "Assinaturas", "Transporte", "Viagens", "Estudos", "Restaurante", "Uber/99Taxi", "Comida Delivery")
+CATEGORIAS_DESPESAS = (
+    "Casa",
+    "Profissional",
+    "Pessoal",
+    "Mercado",
+    "Farmácia e Saúde",
+    "Lazer",
+    "Shopping",
+    "Festas",
+    "Assinaturas",
+    "Transporte",
+    "Viagens",
+    "Estudos",
+    "Restaurante",
+    "Uber/99Taxi",
+    "Comida Delivery",
+)
 LIMITES_CATEGORIAS = {"Mercado": 800.00, "Lazer": 400.00, "Restaurante": 350.00, "Shopping": 500.00, "Uber/99Taxi": 150.00, "Comida Delivery": 200.00}
 
 
@@ -213,12 +229,13 @@ def obter_valor_int(mensagem):
         except ValueError: print("❌ Erro: Por favor, digite um número inteiro.")
 def escolher_categoria():
     print("\n-- Escolha a Categoria da Despesa --")
-    for i, cat in enumerate(CATEGORIAS_DESPESA, 1):
+    for i, cat in enumerate(CATEGORIAS_DESPESAS, 1):
         print(f"{i}. {cat}")
     while True:
         try:
             escolha = int(input("Digite o número da categoria: "))
-            if 1 <= escolha <= len(CATEGORIAS_DESPESA): return CATEGORIAS_DESPESA[escolha - 1]
+            if 1 <= escolha <= len(CATEGORIAS_DESPESAS):
+                return CATEGORIAS_DESPESAS[escolha - 1]
             else: print("❌ Número fora do intervalo. Tente novamente.")
         except ValueError: print("❌ Erro: Por favor, digite um número.")
 
