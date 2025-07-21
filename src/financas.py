@@ -228,7 +228,7 @@ def exibir_menu_principal():
     print("1. Adicionar Ganho\n2. Adicionar Despesa Fixa\n3. Adicionar Despesa Variável")
     print("4. Adicionar Dívida (Pagamento de Parcela)\n5. Adicionar Investimento\n6. Ver Resumo Mensal")
     print("7. Calendário de Vencimentos\n8. Mural dos Sonhos (Metas)")
-    print("9. Configurações e Gerenciamento")
+    print("9. Gerenciamento de Cartões")
     print("10. Sair")
     print("="*40)
 
