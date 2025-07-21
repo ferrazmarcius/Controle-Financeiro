@@ -41,5 +41,16 @@ Este é um programa de console, desenvolvido em Python, para gerenciamento de fi
     python src/financas.py
     ```
 
+## ✅ Como Executar os Testes
+
+1.  Certifique-se de ter instalado as dependências:
+    ```bash
+    pip install -r requirements.txt
+    ```
+2.  Rode o pytest na raiz do projeto:
+    ```bash
+    pytest
+    ```
+
 ---
 *Este projeto foi desenvolvido com a ajuda do Parceiro de Programação da Google.*
