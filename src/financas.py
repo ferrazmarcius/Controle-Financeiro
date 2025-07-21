@@ -84,8 +84,8 @@ def adicionar_cartao(nome, limite, dia_vencimento):
 
 def adicionar_meta(objetivo, valor_alvo, data_alvo):
     df = carregar_ou_criar_df(ARQUIVO_METAS, COLUNAS_METAS)
-    novo_meta = pd.DataFrame([{'Objetivo': objetivo, 'Valor_Alvo': valor_alvo, 'Data_Alvo': data_alvo}])
-    df_atualizado = pd.concat([df, novo_meta], ignore_index=True)
+    nova_meta = pd.DataFrame([{'Objetivo': objetivo, 'Valor_Alvo': valor_alvo, 'Data_Alvo': data_alvo}])
+    df_atualizado = pd.concat([df, nova_meta], ignore_index=True)
     df_atualizado.to_csv(ARQUIVO_METAS, index=False)
     print(f"✅ Meta '{objetivo}' adicionada ao seu Mural dos Sonhos!")
 
