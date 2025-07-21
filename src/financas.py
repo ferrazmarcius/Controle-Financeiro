@@ -201,8 +201,12 @@ def aguardar_enter():
     input("\nPressione Enter para voltar ao menu...")
 def obter_valor_float(mensagem):
     while True:
-        try: return float(input(mensagem).replace(',', '.'))
-        except ValueError: print("❌ Erro: Por favor, digite um número válido.")
+        entrada = input(mensagem)
+        try:
+            limpa = entrada.replace('.', '').replace(',', '.')
+            return float(limpa)
+        except ValueError:
+            print("❌ Erro: Por favor, digite um número válido.")
 def obter_valor_int(mensagem):
     while True:
         try: return int(input(mensagem))
