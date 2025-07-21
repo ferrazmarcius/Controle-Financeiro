@@ -17,6 +17,28 @@ ARQUIVO_INVESTIMENTOS = os.path.join(DATA_DIR, 'investimentos.csv')
 ARQUIVO_CARTOES = os.path.join(DATA_DIR, 'cartoes.csv')
 ARQUIVO_METAS = os.path.join(DATA_DIR, 'metas.csv')
 
+# --- Helpers ---
+def set_data_dir(path: str) -> None:
+    """Atualiza ``DATA_DIR`` e todos os caminhos de arquivos.
+
+    Parameters
+    ----------
+    path: str
+        Novo diretório onde os arquivos CSV serão armazenados.
+    """
+    global DATA_DIR, ARQUIVO_GANHOS, ARQUIVO_DESPESAS_FIXAS, ARQUIVO_DESPESAS_VARIAVEIS
+    global ARQUIVO_DIVIDAS, ARQUIVO_INVESTIMENTOS, ARQUIVO_CARTOES, ARQUIVO_METAS
+
+    DATA_DIR = path
+    os.makedirs(DATA_DIR, exist_ok=True)
+    ARQUIVO_GANHOS = os.path.join(DATA_DIR, 'ganhos.csv')
+    ARQUIVO_DESPESAS_FIXAS = os.path.join(DATA_DIR, 'despesas_fixas.csv')
+    ARQUIVO_DESPESAS_VARIAVEIS = os.path.join(DATA_DIR, 'despesas_variaveis.csv')
+    ARQUIVO_DIVIDAS = os.path.join(DATA_DIR, 'dividas.csv')
+    ARQUIVO_INVESTIMENTOS = os.path.join(DATA_DIR, 'investimentos.csv')
+    ARQUIVO_CARTOES = os.path.join(DATA_DIR, 'cartoes.csv')
+    ARQUIVO_METAS = os.path.join(DATA_DIR, 'metas.csv')
+
 # --- Constantes de Colunas ---
 COLUNAS_GANHOS = ['Descricao', 'Data', 'Valor']
 COLUNAS_DESPESAS_FIXAS = ['Descricao', 'Categoria', 'Data', 'Valor', 'Status', 'Forma_Pagamento']

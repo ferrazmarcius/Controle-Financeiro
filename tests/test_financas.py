@@ -10,17 +10,13 @@ import src.financas as financas
 class TestAdicionarMeta(unittest.TestCase):
     def setUp(self):
         self.original_data_dir = financas.DATA_DIR
-        self.original_arquivo_metas = financas.ARQUIVO_METAS
 
         self.temp_dir = tempfile.TemporaryDirectory()
-        financas.DATA_DIR = self.temp_dir.name
-        financas.ARQUIVO_METAS = os.path.join(financas.DATA_DIR, 'metas.csv')
-        os.makedirs(financas.DATA_DIR, exist_ok=True)
+        financas.set_data_dir(self.temp_dir.name)
 
     def tearDown(self):
         self.temp_dir.cleanup()
-        financas.DATA_DIR = self.original_data_dir
-        financas.ARQUIVO_METAS = self.original_arquivo_metas
+        financas.set_data_dir(self.original_data_dir)
 
     def test_adicionar_meta(self):
         financas.adicionar_meta('Viagem', 5000.0, '2025-12')
